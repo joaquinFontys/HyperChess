@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+
+package logic {
+
+class gameManager{
+- int: turnCount
+- Chessboard: board
+- Player: player1
+- Player: player2
+- Player: currentTurn
+swapTurn()
+previewPiece()
+generateBoard()
+}
+
+class chessboard{
+- Tile[]: board
+- Piece[]: activePieces
+movePiece(String: boardLocation, Piece: piece)
+removePieceFromBoard(piece: taken)
+}
+
+class player{
+- String: name
+- Piece[] piecesTaken
+- int: associatedColor
+addPiece()
+}
+
+class Piece{
+- String: class
+- String: location
+move(String: boardLocation)
+surrender(Player: player)
+}
+
+class Tile{
+- String: location
+- String: color
+previewMode()
+}
+
+gameManager->chessboard
+gameManager->player
+chessboard->Piece
+chessboard->Tile
+}
+
+
+
+@enduml
