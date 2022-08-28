@@ -1,52 +1,70 @@
 @startuml
 'https://plantuml.com/sequence-diagram
+package assembler{
+class main{
++ main()
+}
+}
+package ui{
+class ChessMode{
 
+}
 
+class HyperChess {
+    + start()
+    + startApplication()
+}
+}
+package data{
+}
 package logic {
 
-class gameManager{
+class GameManager{
 - int: turnCount
 - Chessboard: board
 - Player: player1
 - Player: player2
 - Player: currentTurn
-swapTurn()
-previewPiece()
-generateBoard()
++ swapTurn()
++ previewPiece()
++ generateBoard()
 }
 
-class chessboard{
+class Chessboard{
 - Tile[]: board
 - Piece[]: activePieces
-movePiece(String: boardLocation, Piece: piece)
-removePieceFromBoard(piece: taken)
++ movePiece(String: boardLocation, Piece: piece)
+- generate(int: boardWidth, int boardHeight)
++ removePieceFromBoard(piece: taken)
 }
 
-class player{
+class Player{
 - String: name
 - Piece[] piecesTaken
 - int: associatedColor
-addPiece()
++ addPiece()
 }
 
 class Piece{
-- String: class
+- String: job
 - String: location
-move(String: boardLocation)
-surrender(Player: player)
++ move(String: boardLocation)
++ surrender(Player: player)
 }
 
 class Tile{
 - String: location
 - String: color
-previewMode()
++ previewMode()
 }
 
-gameManager->chessboard
-gameManager->player
-chessboard->Piece
-chessboard->Tile
+GameManager->Chessboard
+GameManager->Player
+Chessboard->Piece
+Chessboard->Tile
 }
+assembler->ui
+assembler->logic
 
 
 

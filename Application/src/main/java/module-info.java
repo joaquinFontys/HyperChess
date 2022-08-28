@@ -7,6 +7,6 @@ module com.example.hyperchess {
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
 
-    opens com.example.hyperchess to javafx.fxml;
-    exports com.example.hyperchess;
+    opens hyperchess.ui to javafx.fxml;
+    exports hyperchess.ui;
 }
