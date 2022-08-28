@@ -1,15 +1,19 @@
 package hyperchess.logic;
 
-public class Tile {
-    private String location;
-    private String color;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
-    public Tile(String location, String color) {
+public class Tile extends Rectangle {
+    private String location;
+
+    public Tile(String location, javafx.scene.paint.Paint color) {
         this.location = location;
-        this.color = color;
+        setFill(color);
+        setHeight(50);
+        setWidth(50);
     }
 
     public void previewMode(){
-        this.color = "Red";
+        setFill(Color.RED);
     }
 }

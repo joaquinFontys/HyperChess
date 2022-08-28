@@ -21,4 +21,24 @@ public class GameManager {
     private void previewPiece(){
 
     }
+
+    public int getTurnCount() {
+        return turnCount;
+    }
+
+    public ChessBoard getBoard() {
+        return board;
+    }
+
+    public Player getPlayer1() {
+        return player1;
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public Player getCurrent() {
+        return current;
+    }
 }

@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6b06123-66b1-4006-b5b2-dcccae5bb86b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Documentation/classDiagramHyperChess.puml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Application/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentation/usescases.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation/usescases.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +32,7 @@
     <property name="DefaultPlantUmlFileTemplate" value="UML Sequence" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Documentation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Application" />
   </component>
   <component name="RunManager">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -79,5 +75,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
