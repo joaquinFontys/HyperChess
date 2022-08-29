@@ -9,8 +9,8 @@ public class Tile extends Rectangle {
     public Tile(String location, javafx.scene.paint.Paint color) {
         this.location = location;
         setFill(color);
-        setHeight(50);
-        setWidth(50);
+        setHeight(100);
+        setWidth(100);
     }
 
     public void previewMode(){

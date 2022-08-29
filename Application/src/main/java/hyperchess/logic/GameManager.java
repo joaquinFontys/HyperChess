@@ -1,5 +1,7 @@
 package hyperchess.logic;
 
+import java.io.FileNotFoundException;
+
 public class GameManager {
     private int turnCount;
     private ChessBoard board;
@@ -8,7 +10,11 @@ public class GameManager {
     private Player current;
 
     public GameManager(int width, int height) {
-        this.board = new ChessBoard(width,height);
+        try {
+            this.board = new ChessBoard(width,height);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         this.player1 = new Player("Joaquin", 0);
         this.player2 = new Player("Sakuya", 0);
         this.current = player1;

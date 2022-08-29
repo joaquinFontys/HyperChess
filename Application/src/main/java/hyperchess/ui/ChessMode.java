@@ -2,11 +2,14 @@ package hyperchess.ui;
 
 import hyperchess.logic.ChessBoard;
 import hyperchess.logic.GameManager;
+import hyperchess.logic.Piece;
 import hyperchess.logic.Tile;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
@@ -18,6 +21,17 @@ public class ChessMode {
 
     @FXML
     private GridPane chessBoard;
+
+    @FXML
+    public void clickGrid(javafx.scene.input.MouseEvent event) {
+        Node clickedNode = event.getPickResult().getIntersectedNode();
+        if (clickedNode != chessBoard) {
+            // click on descendant node
+            Integer colIndex = GridPane.getColumnIndex(clickedNode);
+            Integer rowIndex = GridPane.getRowIndex(clickedNode);
+            System.out.println("Mouse clicked cell: " + colIndex + " And: " + rowIndex);
+        }
+    }
 
     @FXML
     protected void onHelloButtonClick() {
@@ -32,6 +46,20 @@ public class ChessMode {
             } else {
                 row++;
             }
+        }
+
+        row = 0;
+        col = 0;
+
+        for (Piece piece : gm.getBoard().getActivePieces()){
+//            chessBoard.getChildren().add(new ImageView(piece.getProfile()));
+//            chessBoard.add(new ImageView(piece.getProfile()), row, col);
+            String[] cords = piece.getLocation().split("");
+            ImageView img = new ImageView(piece.getProfile());
+            int column = 8 - Integer.parseInt(cords[1]);
+            char pos = cords[0].charAt(0);
+            int ro = pos - 'a';
+            chessBoard.add(img,ro, column);
         }
 
 //        char rowCord = 'a';

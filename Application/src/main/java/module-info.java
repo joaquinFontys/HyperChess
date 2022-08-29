@@ -6,6 +6,7 @@ module com.example.hyperchess {
     requires com.dlsc.formsfx;
     requires validatorfx;
     requires org.kordamp.ikonli.javafx;
+    requires java.desktop;
 
     opens hyperchess.ui to javafx.fxml;
     exports hyperchess.ui;
